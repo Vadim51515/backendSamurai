@@ -23,7 +23,7 @@ app.get('/courses', (req, res) => {
   
   let foundCourses = db.courses
   if(req.query.title){
-    foundCourses = foundCourses.filter(c => c.title.includes(req.query.title))
+    foundCourses = foundCourses.filter(c => c.title.includes(req.query.title as string))
   }
 
   if(!foundCourses){
